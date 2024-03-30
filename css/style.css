@@ -1,0 +1,333 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #F7F7F7;
+}
+
+*::selection {
+    background-color: #000;
+    color: #fff;
+}
+
+/* /////////////////== Navigation == ///////////////// */
+nav {
+    /* height: 100px; */
+    width: 100%;
+    /* background: red; */
+    position: fixed;
+    z-index: 99;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 25px;
+}
+
+#nav-left {
+    height: 82px;
+    /* width: 100px; */
+    overflow: hidden;
+}
+
+#nav-left svg {
+    display: block;
+}
+
+
+#nav-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+#nav-right #links a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 20px;
+}
+
+#icons {
+    padding: 10px;
+    border-radius: 50px;
+    background-color: #F7F7F7;
+}
+
+#nav-right #icons i {
+    font-size: 18px;
+    margin-right: 50px;
+    font-weight: 100;
+    margin: 0 20px;
+}
+
+
+/* /////////////////== Utilities == ///////////////// */
+
+/* Utilities */
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.c-pointer {
+    cursor: pointer;
+}
+
+/* /////////////////== Cursor == ///////////////// */
+
+#cursor {
+    height: 100px;
+    width: 100px;
+    background-color: green;
+    position: fixed;
+    border-radius: 50%;
+    mix-blend-mode: difference;
+    /* transform: translate(-50%, -50%) scale(0); */
+    /* z-index: 9; */
+}
+
+/* /////////////////== Main CSS Starts Here == ///////////////// */
+
+#page1 {
+    width: 100%;
+    position: relative;
+    padding: 0 1vw;
+    padding-top: 20vh;
+}
+
+#page1 h1 {
+    font-size: 14vw;
+    letter-spacing: -8px;
+    line-height: 11vw;
+    font-weight: 900;
+    color: #000;
+    height: 15%;
+}
+
+#page1 #video-container {
+    height: 50%;
+    width: 100%;
+    padding: 2vh .5vw;
+    position: relative;
+}
+
+#video-container video {
+    height: 50%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+}
+
+#video-container #play {
+    font-size: 1vw;
+    padding: 2.5vw 2vw;
+    font-weight: 800;
+    color: #fff;
+    background-color: #000;
+    position: absolute;
+    z-index: 1;
+    border-radius: 50%;
+    opacity: 0;
+    scale: 0;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+
+}
+
+#page2 {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* background-color: red; */
+    padding: 3vw 1vw;
+}
+
+#page2 .elem {
+    height: 100%;
+    width: 100%;
+    /* padding: 0vw .5vw 1vw 1vw; */
+    padding: 1vh .5vw;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#page2 .elem img {
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    object-position: center;
+    scale: 1;
+}
+
+#page2 .elem .box {
+    height: 60px;
+    width: 70%;
+    border-radius: 50px;
+    position: absolute;
+    z-index: 9;
+    background-color: palegoldenrod;
+}
+
+#page2 .elem .box:hover {
+    padding-bottom: 200px;
+}
+
+#page3 {
+    min-height: 120vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+#page3 .child {
+    height: 54vh;
+    width: 40vw;
+    position: relative;
+    cursor: pointer;
+    padding: 2vh .5vw;
+
+}
+
+.child img {
+    height: 100%;
+}
+
+/* /////////////////== Responsive Code Starts Here == ///////////////// */
+
+
+@media screen and (width <=830px) {
+    #nav-right #links {
+        font-size: 18px;
+        /* display: none; */
+    }
+
+
+    #nav-right {
+        gap: 0px;
+    }
+
+    #nav-right #links a {
+        font-size: 9px;
+    }
+}
+
+@media screen and (width <=660px) {
+    nav {
+        width: 100%;
+        padding: 25px;
+    }
+
+    #nav-left {
+        /* height: 82px; */
+        /* width: 100px; */
+        overflow: hidden;
+    }
+
+    #nav-left svg {
+        display: block;
+    }
+
+
+    #nav-right #links {
+        display: none;
+    }
+
+    #icons {
+        padding: 10px;
+        border-radius: 50px;
+        margin-top: 20px;
+        background-color: #F7F7F7;
+    }
+
+    #nav-right #icons i {
+        font-size: 20px;
+        font-weight: 900;
+        margin: 0 20px;
+    }
+
+    #page1 {
+        min-height: 50vh;
+        width: 100%;
+        padding: 0 3vw;
+        padding-top: 20vh;
+    }
+
+    #video-container #play {
+        font-size: 4vw;
+        padding: 7.5vw 5vw;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        opacity: 1;
+        scale: 1;
+    }
+
+    #page2 {
+        flex-direction: column;
+    }
+
+    #page2 .elem {
+        height: 50%;
+        width: 100%;
+        overflow: hidden;
+        margin-bottom: 3vw;
+        padding: 1vw 3vw;
+    }
+
+    #page2 .elem img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    #page2 .elem .box {
+        height: 40px;
+        width: 70%;
+        border-radius: 50px;
+        position: absolute;
+        z-index: 9;
+        background-color: palegoldenrod;
+    }
+
+
+    #page3 {
+        min-height: 120vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+
+    #page3 .child {
+        /* background: red; */
+        height: 70vh;
+        width: 60%;
+        position: relative;
+        cursor: pointer;
+        padding: 1vw 3vw;
+    }
+
+    .child img {
+        border-radius: 10px;
+        height: 100%;
+    }
+}
